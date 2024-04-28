@@ -38,7 +38,6 @@ export class AppComponent implements OnInit {
   }
 
   onFileSelected(event: any) {
-    console.error(String(event.target.files[0].name));
     this.http.post<any>('/Client?path=' + String(event.target.files[0].name), {}).subscribe();
     this.getClients();
   }

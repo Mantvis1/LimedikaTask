@@ -1,6 +1,6 @@
 const { env } = require('process');
 
-const target = 'https://localhost:7057';
+const target = 'https://localhost:44347';
 
 const PROXY_CONFIG = [
   {
