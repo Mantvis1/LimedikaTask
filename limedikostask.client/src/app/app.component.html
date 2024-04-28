@@ -1,0 +1,26 @@
+<h1 id="tableLabel">Client info</h1>
+
+<input type="file" class="file-upload" (change)="onFileSelected($event)" #fileUpload>
+
+<button (click)="updatePostIndex()">Update Post Index</button>
+
+<button (click)="refresh()">Refresh page</button>
+
+<p *ngIf="!clients"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+
+<table *ngIf="clients">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Post Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <td>{{ client.name }}</td>
+      <td>{{ client.address }}</td>
+      <td>{{ client.postCode }}</td>
+    </tr>
+  </tbody>
+</table>
